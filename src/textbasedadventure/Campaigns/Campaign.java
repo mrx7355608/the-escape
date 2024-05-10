@@ -1,11 +1,14 @@
 
 package textbasedadventure.Campaigns;
 
-import textbasedadventure.Character.Character;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import textbasedadventure.Player.Player;
 
 public class Campaign {
     private final String name;
-    private static final Character character = new Character("Asmeer");
+    private static final Player player = new Player("Asmeer");
     
     // Constructor
     public Campaign(String n) {
@@ -17,16 +20,18 @@ public class Campaign {
         return name;
     }
     
-    // Getter for campaign character
-    public static Character getCharacter() {
-        return character;
+    // Getter for campaign player
+    public static Player getPlayer() {
+        return player;
     }
         
     // Starts the campaign
     public void start() {
+        this.beginning();
         this.hurdleOne();
         this.hurdleTwo();
         this.hurdleThree();
+        this.ending();
     }
     
     // Restarts a specific hurdle
@@ -44,12 +49,18 @@ public class Campaign {
         }
     }
     
-    // Restarts campaign
-    public void restartCampaign() {
-        this.start();
+    protected void printWithSmallDelays(String data) {
+        System.out.println(data);
+        try {
+            TimeUnit.MILLISECONDS.sleep((long) 1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Campaign.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
+    protected void beginning() {}
     protected void hurdleOne() {}
     protected void hurdleTwo() {}
     protected void hurdleThree() {}
+    protected void ending() {}
 }

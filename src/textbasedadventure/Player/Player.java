@@ -1,15 +1,15 @@
 
-package textbasedadventure.Character;
+package textbasedadventure.Player;
 
 import java.util.ArrayList;
 
-public class Character {
+public class Player {
     private final String name;
     private int health;    
     private final ArrayList<String> skills;
     private int goldCoins;
     
-    public Character(String n) {
+    public Player(String n) {
         this.name = n;
         this.health = 100;
         this.goldCoins = 50;

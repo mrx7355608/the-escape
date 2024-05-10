@@ -31,6 +31,7 @@ public class Game {
             System.out.println("2. South");
             System.out.println("3. East");
             System.out.println("4. West");
+            System.out.print(">>> ");
             int choice = new Scanner(System.in).nextInt();
 
             switch (choice) {

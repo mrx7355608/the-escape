@@ -3,8 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Projects/Java/Adventure/TextBasedAdventure/src/textbasedadventure/Locations/North.java</file>
-            <file>file:/D:/Projects/Java/Adventure/TextBasedAdventure/src/textbasedadventure/Locations/Location.java</file>
+            <file>file:/D:/Projects/Java/Adventure/TextBasedAdventure/src/textbasedadventure/Campaigns/Campaign.java</file>
+            <file>file:/D:/Projects/Java/Adventure/TextBasedAdventure/src/textbasedadventure/Campaigns/North.java</file>
+            <file>file:/D:/Projects/Java/Adventure/TextBasedAdventure/src/textbasedadventure/Game.java</file>
         </group>
     </open-files>
 </project-private>

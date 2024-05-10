@@ -1,40 +1,43 @@
 package textbasedadventure.Campaigns;
 
+
 import java.util.Scanner;
+import textbasedadventure.Player.Player;
 
 public class North extends Campaign {
-
     public North() {
         super("North");
     }
+    
+    @Override
+    protected void beginning() {}
 
     @Override
-    public void hurdleOne() {
-        System.out.println("Here we go! You have came across your first trap!...");
-
-        // Thread.sleep(1000.0);
-        System.out.println("It's a narrow bridge with deadly footholds....");
-        System.out.println("What do you think? How will you cross this bridge");
+    protected void hurdleOne() {
+        Player p = Campaign.getPlayer();
+        this.printWithSmallDelays("Here we go! " + p.getName() + " has came across his first trap!...");
+        this.printWithSmallDelays("It's a narrow bridge with deadly footholds....");
+        this.printWithSmallDelays("What do you think? How will you cross this bridge");
 
         // TODO: take a suggestion from user
-        int choice = takeUserChoice();
-
+        
+        int choice = this.takeUserChoice();
         switch (choice) {
             case 1 -> {
-                System.out.println("Oh no! You have landed on foothold!");
+                this.printWithSmallDelays("Oh no! You have landed on foothold!");
             }
 
             case 2 -> {
-                System.out.println("Throwing stone at first foothold...");
-                System.out.println("Destroyed!");
+                this.printWithSmallDelays("Throwing stone at first foothold...");
+                this.printWithSmallDelays("First foothold has been destroyed!");
                 
-                System.out.println("Moving forward....");
+                this.printWithSmallDelays("Now, moving forward....");
                 System.out.println("Wait! there's another foothold!");
                 
-                System.out.println("Throwing stone at second foothold...");
-                System.out.println("Destroyed!");
-                System.out.println("Throwing stone at third foothold...");
-                System.out.println("Destroyed!");
+                this.printWithSmallDelays("Throwing stone at second foothold...");
+                this.printWithSmallDelays("Destroyed!");
+                this.printWithSmallDelays("Throwing stone at third foothold...");
+                this.printWithSmallDelays("Destroyed!");
             }
             
             case 3 -> {
@@ -43,14 +46,17 @@ public class North extends Campaign {
         }
         
         // Cleared
-        System.out.println("This is just the beginning...(evil emoji)");
+        this.printWithSmallDelays("This is just the beginning...(evil emoji)");
     }
     
     @Override
-    public void hurdleTwo() {}
+    protected void hurdleTwo() {}
     
     @Override
-    public void hurdleThree() {}
+    protected void hurdleThree() {}
+    
+    @Override
+    protected void ending() {}
     
     private int takeUserChoice() {
         System.out.println("1. By performing frontflip.");

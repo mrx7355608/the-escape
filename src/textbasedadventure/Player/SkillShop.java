@@ -1,5 +1,5 @@
 
-package textbasedadventure.Character;
+package textbasedadventure.Player;
 
 public class SkillShop {
     
